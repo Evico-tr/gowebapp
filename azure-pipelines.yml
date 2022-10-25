@@ -34,11 +34,11 @@ stages:
       inputs:
         serviceConnectionEndpoint: 'snyk'
         testType: 'app'
+        targetFile: '**/gowebapp'
         monitorWhen: 'always'
         failOnIssues: true
         projectName: 'gowebapp'
         organization: 'anachebevictor'
-    
 - stage: Build
   displayName: Build and push stage
   jobs:
