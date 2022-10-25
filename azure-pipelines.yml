@@ -22,6 +22,23 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
+- stage: Test
+  displayName: Security Scan
+  jobs:
+  - job: SnykScan
+    displayName: SnykScan
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: SnykSecurityScan@1
+      inputs:
+        serviceConnectionEndpoint: 'snyk'
+        testType: 'app'
+        monitorWhen: 'always'
+        failOnIssues: true
+        projectName: 'gowebapp'
+        organization: 'anachebevictor'
+    
 - stage: Build
   displayName: Build and push stage
   jobs:
