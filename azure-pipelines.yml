@@ -32,7 +32,7 @@ stages:
     steps:
     - task: GoTool@0
       inputs:
-        version: '1.10'
+        version: '1.14'
     - checkout: self
     - script: |
         cd gowebapp
