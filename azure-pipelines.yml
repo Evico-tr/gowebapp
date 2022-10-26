@@ -34,6 +34,14 @@ stages:
       inputs:
         serviceConnectionEndpoint: 'snyk'
         testType: 'app'
+        monitorWhen: 'always'
+        failOnIssues: false
+        projectName: 'test'
+        additionalArguments: '--package-manager=go'
+    - task: SnykSecurityScan@1
+      inputs:
+        serviceConnectionEndpoint: 'snyk'
+        testType: 'app'
         # targetFile: 
         monitorWhen: 'always'
         failOnIssues: true
