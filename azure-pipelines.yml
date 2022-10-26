@@ -37,7 +37,7 @@ stages:
         monitorWhen: 'always'
         failOnIssues: false
         projectName: 'test'
-        additionalArguments: '--package-manager=go'
+        additionalArguments: '--package-manager=gomodules'
     - task: SnykSecurityScan@1
       inputs:
         serviceConnectionEndpoint: 'snyk'
