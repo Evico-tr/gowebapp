@@ -34,6 +34,7 @@ stages:
       inputs:
         serviceConnectionEndpoint: 'snyk'
         testType: 'app'
+        targetFile: gowebapp/code/**
         monitorWhen: 'always'
         failOnIssues: false
         projectName: 'test'
